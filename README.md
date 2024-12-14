@@ -1,0 +1,1 @@
+https://github.com/noob1ess/slozhno-sosredotochitsya-fd.git

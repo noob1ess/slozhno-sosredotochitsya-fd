@@ -4,13 +4,23 @@
   переключая тему
 */
 
-:root.theme-dark {
+.page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-}
-
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  --page-bg: rgb(0 0 40);
+  --bg-image: url(../images/cover-image-dark.png);
+  --rec-color: rgb(255 0 112);
+  --decor-color: rgb(255 0 112);
+  --btn-color: rgb(255 0 112);
+  --btn-outline: rgb(255 0 112);
+  --btn-outline-hover: rgb(255 0 112 / 0.4);
+  --h1-color: rgb(219 0 255);
+  --h1-shadow: rgb(255 0 112);
+  --title-color: rgb(255 0 112);
+  --subtilte-color: rgb(0 0 40);
+  --subtitle-bg: rgb(255 0 112);
+  --text-color: rgb(241 178 206);
+  --link-shadow: rgb(255 0 112);
 }

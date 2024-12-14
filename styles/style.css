@@ -1,5 +1,374 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта.
+Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  /* сохраните в разметке и стилях класс page.
+  На его основе работает скрипт. */
+  font-family: var(--font-family), sans-serif;
+  background-color: var(--page-bg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  inline-size: 375px;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.decorated-zone {
+  padding: 10px;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  border-top: 1px var(--decor-color) solid;
+  border-right: 1px var(--decor-color) solid;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  border-bottom: 1px var(--decor-color) solid;
+  border-left: 1px var(--decor-color) solid;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+}
+
+.header__rec-decorated {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  inset-block-start: 10px;
+  inset-inline-end: 19px;
+}
+
+.header__rec-decorated::before {
+  content: 'REC';
+  color: var(--rec-color);
+  font-family: inherit;
+  font-size: var(--other-text-size);
+  line-height: 139%;
+}
+
+.header__rec-decorated::after {
+  content: '';
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--rec-color);
+  background-color: var(--rec-color);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin-block: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--btn-outline);
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding-inline: 13px;
+  padding-block: 3px;
+  color: var(--btn-color);
+  font-family: inherit;
+  font-weight: 400;
+  font-size: var(--other-text-size);
+  font-style: normal;
+  line-height: 100%;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--btn-outline-hover);
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: 1px var(--btn-outline) solid;
+  outline: none;
+}
+
+.page__title {
+  margin-block-start: 3px;
+  color: var(--h1-color);
+  font-weight: 700;
+  font-size: var(--page-title-size);
+  line-height: 82.5%;
+  text-shadow: 4px 4px var(--h1-shadow);
+}
+
+.header__title {
+  margin-block-start: 55px;
+  margin-block-end: 55px;
+  font-weight: 700;
+}
+
+.title-decor {
+  color: var(--subtitle-color);
+  font-weight: 700;
+  font-size: var(--other-text-size);
+  line-height: 130%;
+  background-color: var(--subtitle-bg);
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+  margin: 40px 10px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+  font-size: var(--other-text-size);
+  line-height: 130%;
+}
+
+.section__title {
+  color: var(--title-color);
+  font-size: inherit;
+}
+
+.section__list {
+  display: grid;
+  gap: 20px;
+}
+
+.item__content {
+  display: grid;
+  gap: 10px;
+}
+
+.item__content-text {
+  color: var(--text-color);
+  font-size: inherit;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 1px 2px var(--link-shadow);
+}
+
+.text-link:hover {
+  border-bottom: 1px var(--text-color) solid;
+}
+
+.text-link:focus {
+  outline: 1px var(--text-color) solid;
+}
+
+.section__improving .section__list-item:not(:first-child) .title-decor {
+  font-weight: 400;
+}
+
+.section__gallery {
+  --title-color: var(--subtitle-color);
+  gap: 10px;
+}
+
+.gallery-list {
+  display: grid;
+  grid-template-rows: 142px 355px 237px 355px 237px;
+  gap: 10px;
+}
+
+.gallery-image {
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.footer {
+  position: relative;
+  min-block-size: 668px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__title {
+  color: var(--h1-color);
+  font-size: var(--page-title-size);
+  text-shadow: 2px 2px var(--h1-shadow);
+}
+
+@media (width >= 768px) {
+
+  .page {
+    --page-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    inline-size: 768px;
+  }
+
+  .decorated-zone {
+    padding: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .header__rec-decorated {
+    inset-block-start: 20px;
+    inset-inline-end: 29px;
+  }
+
+  .header__theme-menu {
+    margin-block: 173px;
+  }
+
+  .page__title {
+    margin-inline-start: -20px;
+  }
+
+  .header__title {
+    justify-self: end;
+    margin-block-start: 161px;
+    margin-block-end: 163px;
+    inline-size: 50%;
+  }
+
+  .main {
+    gap: 80px;
+    margin: 60px 20px;
+  }
+
+  .section__left-title {
+    grid-template-columns: 236px 1fr;
+  }
+
+  .section__top-title .section__title {
+    max-inline-size: 236px;
+  }
+
+  .section__gallery {
+    gap: 20px;
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 230px);
+    grid-template-rows: 192px 230px 318px;
+    gap: 20px;
+  }
+
+  .gallery-list-item:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+  }
+
+  .gallery-list-item:nth-child(2) {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .gallery-list-item:nth-child(3) {
+    grid-column: 1 / 1;
+    grid-row: 2 / 4;
+  }
+
+  .gallery-list-item:nth-child(4) {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+  }
+
+  .gallery-list-item:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 3 / 3;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .page {
+    inline-size: 1024px;
+  }
+
+  .decorated-zone {
+    padding: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .header__rec-decorated {
+    inset-block-start: 20px;
+    inset-inline-end: 29px;
+  }
+
+  .header__theme-menu {
+    margin-inline: auto;
+    margin-block-start: 0;
+    margin-block-end: 272px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__title {
+    margin-block: 115px;
+  }
+
+  .section__left-title {
+    grid-template-columns: 315px 1fr;
+  }
+
+  .section__top-title .section__title {
+    max-inline-size: 315px;
+  }
+
+  .section__top-title .section__list {
+    grid-template-columns: repeat(3, 315px);
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 315px);
+    grid-template-rows: 260px 315px 433px;
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
 }
