@@ -4,7 +4,7 @@
 */
 
 :root {
-  --font-family: ibm plex mono;
+  --font-family: IBM Plex mono;
   --page-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --other-text-size: 18px;
   --page-bg: rgb(0 0 40);
@@ -21,4 +21,14 @@
   --subtitle-bg: rgb(255 0 112);
   --text-color: rgb(241 178 206);
   --link-shadow: rgb(255 0 112);
+}
+
+.section__gallery {
+  --title-color: var(--subtitle-color);
+}
+
+@media (width >= 768px){
+  .page {
+    --page-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
