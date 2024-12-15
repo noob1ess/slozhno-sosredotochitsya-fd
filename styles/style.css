@@ -359,11 +359,11 @@
   }
 
   .section__reduced-concentration .section__list {
-    grid-template-columns: repeat(3, 315px);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .gallery-list {
-    grid-template-columns: repeat(3, 315px);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 260px 315px 433px;
   }
 
